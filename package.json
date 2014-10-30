@@ -1,0 +1,18 @@
+{
+  "name": "brain",
+  "version": "0.0.1",
+  "description": "A simple Neural Network",
+  "main": "lib/brain.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/greatcodeclub/brain.git"
+  },
+  "keywords": [
+    "ai",
+    "neural-network"
+  ],
+  "author": "Marc-Andre Cournoyer",
+  "bugs": {
+    "url": "https://github.com/greatcodeclub/brain/issues"
+  }
+}
