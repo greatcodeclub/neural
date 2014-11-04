@@ -1,4 +1,4 @@
-var NetworkNetwork = require('./lib/neural').Network
+var NetworkNetwork = require('../lib/neural').Network
 var network = new NetworkNetwork()
 
 // Layers
@@ -17,10 +17,10 @@ network.train([
 
 // Querying the network
 var output = network.process([1, 0]) // => [1]
-console.log(output, Math.round(output))
+console.log("1 XOR 0 =", Math.round(output), output)
 
 var output = network.process([0, 0]) // => [0]
-console.log(output, Math.round(output))
+console.log("0 XOR 0 =", Math.round(output), output)
 
 var output = network.process([1, 1]) // => [0]
-console.log(output, Math.round(output))
+console.log("1 XOR 1 =", Math.round(output), output)
