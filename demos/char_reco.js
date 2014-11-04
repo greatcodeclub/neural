@@ -29,7 +29,7 @@ var three = [
   1, 1, 0,
 ]
 
-network.errorThreshold = 0.001
+network.errorThreshold = 0.0001
 
 network.train([
   // Training examples
