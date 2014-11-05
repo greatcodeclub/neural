@@ -1,5 +1,5 @@
-var NetworkNetwork = require('../lib/neural').Network
-var network = new NetworkNetwork()
+var NeuralNetwork = require('../lib/neural').Network
+var network = new NeuralNetwork()
 
 // Layers
 network.addLayer(5, 2) // Hidden layer: 5 neurons, 2 inputs each (# inputs = # inputs to process)
