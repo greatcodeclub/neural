@@ -1,44 +1,8 @@
-// Our character "images". Imagine `1`s as black pixels.
-var zero = [
-  0, 1, 1, 0,
-  1, 0, 0, 1,
-  1, 0, 0, 1,
-  1, 0, 0, 1,
-  0, 1, 1, 0
-]
+var neural = require('../lib/neural')
+var network = new neural.Network()
 
-var one = [
-  0, 0, 1, 0,
-  0, 0, 1, 0,
-  0, 0, 1, 0,
-  0, 0, 1, 0,
-  0, 0, 1, 0
-]
-
-var two = [
-  0, 1, 1, 0,
-  1, 0, 0, 1,
-  0, 0, 1, 0,
-  0, 1, 0, 0,
-  1, 1, 1, 1
-]
-
-var three = [
-  1, 1, 1, 1,
-  0, 0, 0, 1,
-  0, 1, 1, 1,
-  0, 0, 0, 1,
-  1, 1, 1, 1
-]
-
-network.train([
-  // Training examples
-  // inputs   outputs
-  [  zero,    [0, 0]  ],
-  [  one,     [0, 1]  ],
-  [  two,     [1, 0]  ],
-  [  three,   [1, 1]  ],
-])
+network.addLayer(10, 20) // Hidden layer, 10 neurons, 20 inputs
+network.addLayer(2)      // Output layer, 2 neurons
 
 // Querying the network
 var outputs = network.process([
