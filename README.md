@@ -12,7 +12,9 @@ You need:
 
 ## Usage
 
-    $ node demo.js
+See files in demos/
+
+    $ node demos/character_recognition.js
 
 ## License
 
