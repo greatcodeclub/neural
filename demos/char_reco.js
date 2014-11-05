@@ -2,34 +2,32 @@ var NeuralNetwork = require('../lib/neural').Network
 var network = new NeuralNetwork()
 
 // Layers
-network.addLayer(7, 15)
+network.addLayer(10, 20)
 network.addLayer(2)
 
 var one = [
-  0, 1, 0,
-  0, 1, 0,
-  0, 1, 0,
-  0, 1, 0,
-  0, 1, 0,
+  0, 0, 1, 0,
+  0, 0, 1, 0,
+  0, 0, 1, 0,
+  0, 0, 1, 0,
+  0, 0, 1, 0
 ]
 
 var two = [
-  1, 1, 1,
-  0, 0, 1,
-  0, 1, 0,
-  1, 0, 0,
-  1, 1, 1,
+  0, 1, 1, 0,
+  1, 0, 0, 1,
+  0, 0, 1, 0,
+  0, 1, 0, 0,
+  1, 1, 1, 1
 ]
 
 var three = [
-  1, 1, 0,
-  0, 0, 1,
-  0, 1, 0,
-  0, 0, 1,
-  1, 1, 0,
+  1, 1, 1, 1,
+  0, 0, 0, 1,
+  0, 1, 1, 1,
+  0, 0, 0, 1,
+  1, 1, 1, 1
 ]
-
-network.errorThreshold = 0.0001
 
 network.train([
   // Training examples
@@ -41,11 +39,15 @@ network.train([
 
 // Querying the network
 var output = network.process([
-  0, 1, 1,
-  1, 0, 1,
-  0, 1, 0,
-  1, 0, 0,
-  1, 1, 0,
+  1, 1, 1, 1,
+  1, 0, 0, 1,
+  0, 0, 1, 0,
+  0, 1, 0, 0,
+  1, 1, 1, 0
 ])
-var bits = output.map(function(v) { return Math.round(v) }).join("")
-console.log("Recognized", parseInt(bits, 2), output)
+
+// Convert the output to binary (base 2) and then to decimal (base 10).
+var binary = output.map(function(v) { return Math.round(v) }).join("")
+var decimal = parseInt(binary, 2)
+
+console.log("Recognized", decimal, output)
