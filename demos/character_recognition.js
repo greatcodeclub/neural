@@ -5,6 +5,14 @@ var network = new NeuralNetwork()
 network.addLayer(10, 20)
 network.addLayer(2)
 
+var zero = [
+  0, 1, 1, 0,
+  1, 0, 0, 1,
+  1, 0, 0, 1,
+  1, 0, 0, 1,
+  0, 1, 1, 0
+]
+
 var one = [
   0, 0, 1, 0,
   0, 0, 1, 0,
@@ -32,6 +40,7 @@ var three = [
 network.train([
   // Training examples
   // inputs   outputs
+  [  zero,    [0, 0]  ],
   [  one,     [0, 1]  ],
   [  two,     [1, 0]  ],
   [  three,   [1, 1]  ],
