@@ -5,7 +5,7 @@ var network = new NeuralNetwork()
 network.addLayer(10, 20) // Hidden layer: 10 neurons, 20 inputs each (# inputs = # inputs to process).
 network.addLayer(2)      // Output layer: 2 neurons, outputting the results.
 
-// Our character "images". Image `1`s as black pixels.
+// Our character "images". Imagine `1`s as black pixels.
 var zero = [
   0, 1, 1, 0,
   1, 0, 0, 1,
