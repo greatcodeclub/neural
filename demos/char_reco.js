@@ -41,7 +41,7 @@ network.train([
 
 // Querying the network
 var output = network.process([
-  1, 1, 1,
+  0, 1, 1,
   1, 0, 1,
   0, 1, 0,
   1, 0, 0,
