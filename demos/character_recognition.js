@@ -1,9 +1,8 @@
-var NeuralNetwork = require('../lib/neural').Network
-var network = new NeuralNetwork()
+var neural = require('../lib/neural')
+var network = new neural.Network()
 
-// Layers
-network.addLayer(10, 20) // Hidden layer: 10 neurons, 20 inputs each (# inputs = # inputs to process).
-network.addLayer(2)      // Output layer: 2 neurons, outputting the results.
+network.addLayer(10, 20) // Hidden layer, 10 neurons, 20 inputs
+network.addLayer(2)      // Output layer, 2 neurons
 
 // Our character "images". Imagine `1`s as black pixels.
 var zero = [
@@ -47,17 +46,19 @@ network.train([
   [  three,   [1, 1]  ],
 ])
 
+
 // Querying the network
-var output = network.process([
+var outputs = network.process([
   1, 1, 1, 1,
   1, 0, 0, 1,
-  0, 0, 1, 0,
-  0, 1, 0, 0,
+  1, 0, 0, 1,
+  1, 0, 0, 1,
   1, 1, 1, 0
 ])
+// outputs === [~1, ~0]
 
 // Convert the output to binary (base 2) and then to decimal (base 10).
-var binary = output.map(function(v) { return Math.round(v) }).join("")
+var binary  = outputs.map(function(v) { return Math.round(v) }).join("")
 var decimal = parseInt(binary, 2)
 
-console.log("Recognized", decimal, output)
+console.log("Recognized", decimal, outputs)

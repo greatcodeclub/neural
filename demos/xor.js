@@ -6,7 +6,7 @@ network.addLayer(5, 2) // Hidden layer: 5 neurons, 2 inputs each (# inputs = # i
 network.addLayer(4)    // Hidden layer: 4 neurons
 network.addLayer(1)    // Output layer: 1 neuron, outputting the result
 
-network.trainingIterations = 500000
+// network.trainingIterations = 500000
 
 network.train([
   // Training examples
